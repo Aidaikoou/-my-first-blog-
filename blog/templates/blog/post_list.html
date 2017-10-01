@@ -1,34 +1,34 @@
-<html>
-    <p>Hi there!</p>
-    <p>It works!</p>
-</html>
- <html>
+      <html>
         <head>
-            <title>Aidai's blog</title>
+            <title>Ola's blog</title>
         </head>
         <body>
             <p>Hi there!</p>
             <p>It works!</p>
         </body>
-    </html>
-    <html>
+    </html>   
+     <html>
         <head>
-            <title>blog</title>
+            <title>Django Girls blog</title>
         </head>
         <body>
             <div>
-                <h1><a href="">today ian done Blog</a></h1>
+                <h1><a href="">Django Girls Blog</a></h1>
             </div>
 
             <div>
-                <p>published: 1.10.2017, 12:14</p>
-                <h2><a href="">My first post and the first lesson</a></h2>
-                <p>hakkkkkkkkkkkkkk.</p>
+            	{{ posts }}
             </div>
-
-            <div>
-            	<p>published: 1o.10.2017, 12:14</p>
-                <h2><a href="">My second post</a></h2>
-                <p>some spanish.</p>
         </body>
     </html>
+        <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+
+    {% for post in posts %}
+        <div>
+            <p>published: {{ post.published_date }}</p>
+            <h1><a href="">{{ post.title }}</a></h1>
+            <p>{{ post.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
